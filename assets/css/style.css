@@ -1,17 +1,32 @@
-/*#region Stylesheet rules */
-
 /* Import del mio font */
 @import url(./fonts.css);
+/* Import del mio file variabile */
+@import url(./partials/_variables.css);
 
+/*#region Header Style  */
 
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Logo */
+.header_area .main-menu .navbar-brand {
+    padding: 0 2rem 0 5rem;
+}
+.header_area .main-menu .navbar {
+    padding: 1rem 20rem;
 }
 
+/* Nav Links */
+.header_area .main-menu .nav-item .nav-link {
+    font:normal 500 15px/2 var(--roboto); /* Per definire il font in unica volta */
+    text-transform: uppercase;
+    padding: 1.7rem;
+    color: var(--title-color);
+}
 
+.header_area .main-menu .navbar-nav .active,
+.header_area .main-menu .navbar-nav a:hover {
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 
 /*#endregion */
