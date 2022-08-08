@@ -1,3 +1,57 @@
 .title-text {
     font: normal bold 50px/72px var(--roboto);
 }
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+/*#region Buttons */
+.button {
+    padding: 0.8rem 2.2rem !important;
+    font: normal 500 16px/20px var(--roboto) !important;
+    position: relative;
+    border: 3px solid transparent !important;
+    border-radius: 4px !important;
+}
+
+.button.primary-button,
+.button.secondary-button {
+    background-clip: padding-box;
+    transition: background 0.6s ease;
+}
+
+.button.primary-button,
+.button.secondary-button {
+    background: var(--gradient-color);
+    color: whitesmoke;
+    box-shadow: var(--box-shadow);
+}    
+
+
+/*#region primary/secondary-button */
+
+.button.primary-button:hover,
+.button.secondary-button:hover {
+    background: whitesmoke;
+    background-clip: padding-box;
+    color: black;
+}
+
+.button.primary-button::after,
+.button.secondary-button::after {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    bottom: -2px;
+    right: -2px;
+    background: var(--gradient-color);
+    content: '';
+    z-index: -1;
+    border-radius: 4px;
+}
+/*#endregion */
+
+
+
+/*#endregion */
