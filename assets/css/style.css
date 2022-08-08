@@ -2,6 +2,8 @@
 @import url(./fonts.css);
 /* Import del mio file variabile */
 @import url(./partials/_variables.css);
+/* Import del file globale */
+@import url(./partials/_global.css);
 
 /*#region Header */
 
@@ -58,6 +60,9 @@
     padding: 7rem 0;
     width: 90rem;
 }
+
+
+
 
 /*#endregion */
 
