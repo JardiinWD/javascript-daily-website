@@ -1,14 +1,5 @@
 //#region Variabili e Costanti
 
-/* Seleziono la mia lista non ordinata con tutti i list item */
-
-const navbarLinks = document.getElementById("navbarLinks")
-console.log(navbarLinks);
-/* Appendo la mia chiamata AJAX al file JSON */
-navbarLinks.insertAdjacentHTML(fetchNavLinks())
-
-
-
 /* Seleziono la mia row principale con all'interno i brands */
 const partnersContainer = document.getElementById("siteBrands")
 console.log(partnersContainer);
@@ -328,8 +319,9 @@ $(document).ready(function () {
 async function fetchNavLinks() {
     const response = await fetch('./assets/json/nLinks.json');
     const data = await response.json();
-    const myJson = JSON.stringify(data)
     console.log(data); // Verifico in console
+    /* Qui devo dichiarare il mio ID da prendere */
+    const navbarLinks = document.getElementById("navbarLinks")
 
     data.forEach(element => {
         let singleLink =
@@ -340,10 +332,9 @@ async function fetchNavLinks() {
             `
         navbarLinks.insertAdjacentHTML('beforeend', singleLink)
     })
-    return myJson
 }
-
-
+/* Ora invoco la mia function per dichiarare i miei Links */
+fetchNavLinks()
 
 
 //#endregion
@@ -351,21 +342,6 @@ async function fetchNavLinks() {
 //#region Cicli
 
 /* Valuta di fare tutto tramite Chiamate AJAX/JSON */
-
-/* Ciclo per iterare link alla navbar */
-/* nLinks.forEach(element => {
-    requestData(LinksURL)
-    let singleLink =
-        `
-    <li class="${element.liClass}">
-        <a class="${element.aClass}" href="${element.href}">${element.title}</a>
-    </li>
-    `
-    navbarLinks.insertAdjacentHTML('beforeend', singleLink)
-}) */
-
-
-
 
 /* Ciclo per iterare cards dei partner */
 partners.forEach(element => {
