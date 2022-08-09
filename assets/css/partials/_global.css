@@ -10,6 +10,16 @@
     font-family: var(--roboto);
 }
 
+button:focus,
+button:active,
+button:hover,
+.btn:active,
+.btn.active {
+    outline: 0px !important;
+    box-shadow: none !important;   
+}
+
+
 /*#region Buttons */
 .button {
     padding: 0.8rem 2.2rem !important;

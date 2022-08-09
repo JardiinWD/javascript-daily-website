@@ -201,3 +201,24 @@ p.para {
 }
 
 /*#endregion */
+
+/*#region Project Area */
+.project-area {
+    padding: 4rem 0;
+}
+
+.project-area .button-group > button {
+    background: transparent;
+    border: none;
+    font: normal bolder 16px/130px var(--roboto);
+    text-transform: uppercase;
+    padding-right: 3rem;
+    
+}
+
+.our-project > .title h4 {
+    font: normal 700 25px/12px var(--roboto);
+}
+
+
+/*#endregion */
