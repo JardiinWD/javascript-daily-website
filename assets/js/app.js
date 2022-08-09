@@ -8,6 +8,10 @@ console.log(navbarLinks);
 const partnersContainer = document.getElementById("siteBrands")
 console.log(partnersContainer);
 
+/* Seleziono la mia row principale per i servizi offerti */
+const serviceContainer = document.getElementById("service")
+console.log(serviceContainer);
+
 //#endregion
 
 //#region Arrays/Objects
@@ -117,6 +121,62 @@ const partners = [
 ]
 /* console.log(partners); */
 
+const serviceOffers = [
+    /* WP Developer */
+    {
+        col_classes: 'col-lg-3 col-md-6 col-sm-12', // <div class="col-lg-3 col-md-6 col-sm-12">
+        services_wrap: 'services', // <div class="services">
+        col_img_class: 'services-img text-center py-4', //  <div class="services-img text-center py-4">
+        img_service: './assets/img/services/s1.png', // <img src="./assets/img/services/s1.png" alt="Services 1">
+        img_alt: 'Services 1', // <img src="./assets/img/services/s1.png" alt="Services 1">
+        card_style: 'card-body text-center', // <div class="card-body text-center">
+        h5_classes: 'card-title text-uppercase font-roboto', // <h5 class="card-title text-uppercase font-roboto">Wp Developer</h5>
+        h5_text: 'Wp Developer', // <h5 class="card-title text-uppercase font-roboto">Wp Developer</h5>
+        p_classes: 'card-text text-secondary', // <p class="card-text text-secondary">
+        p_text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, ex! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, a.'
+    },
+    /* UX/UI Design */
+    {
+        col_classes: 'col-lg-3 col-md-6 col-sm-12', // <div class="col-lg-3 col-md-6 col-sm-12">
+        services_wrap: 'services', // <div class="services">
+        col_img_class: 'services-img text-center py-4', //  <div class="services-img text-center py-4">
+        img_service: './assets/img/services/s2.png', // <img src="./assets/img/services/s2.png" alt="Services 2">
+        img_alt: 'Services 2', // <img src="./assets/img/services/s2.png" alt="Services 2">
+        card_style: 'card-body text-center', // <div class="card-body text-center">
+        h5_classes: 'card-title text-uppercase font-roboto', // <h5 class="card-title text-uppercase font-roboto">UX/UI Design</h5>
+        h5_text: 'UX/UI Design', // <h5 class="card-title text-uppercase font-roboto">UX/UI Design</h5>
+        p_classes: 'card-text text-secondary', // <p class="card-text text-secondary">
+        p_text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, ex! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, a.'
+    },
+    /* Web Design */
+    {
+        col_classes: 'col-lg-3 col-md-6 col-sm-12', // <div class="col-lg-3 col-md-6 col-sm-12">
+        services_wrap: 'services', // <div class="services">
+        col_img_class: 'services-img text-center py-4', //  <div class="services-img text-center py-4">
+        img_service: './assets/img/services/s3.png', // <img src="./assets/img/services/s3.png" alt="Services 3">
+        img_alt: 'Services 3', // <img src="./assets/img/services/s3.png" alt="Services 3">
+        card_style: 'card-body text-center', // <div class="card-body text-center">
+        h5_classes: 'card-title text-uppercase font-roboto', // <h5 class="card-title text-uppercase font-roboto">Web Design</h5>
+        h5_text: 'Web Design', // <h5 class="card-title text-uppercase font-roboto">Web Design</h5>
+        p_classes: 'card-text text-secondary', // <p class="card-text text-secondary">
+        p_text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, ex! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, a.'
+    },
+    /* SEO Optimize */
+    {
+        col_classes: 'col-lg-3 col-md-6 col-sm-12', // <div class="col-lg-3 col-md-6 col-sm-12">
+        services_wrap: 'services', // <div class="services">
+        col_img_class: 'services-img text-center py-4', //  <div class="services-img text-center py-4">
+        img_service: './assets/img/services/s4.png', // <img src="./assets/img/services/s4.png" alt="Services 4">
+        img_alt: 'Services 4', // <img src="./assets/img/services/s4.png" alt="Services 4">
+        card_style: 'card-body text-center', // <div class="card-body text-center">
+        h5_classes: 'card-title text-uppercase font-roboto', // <h5 class="card-title text-uppercase font-roboto">SEO Optimize</h5>
+        h5_text: 'SEO Optimize', // <h5 class="card-title text-uppercase font-roboto">SEO Optimize</h5>
+        p_classes: 'card-text text-secondary', // <p class="card-text text-secondary">
+        p_text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, ex! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, a.'
+    },
+]
+/* console.log(serviceOffers); */
+
 //#endregion
 
 //#region Cicli
@@ -144,6 +204,26 @@ partners.forEach(element => {
         `
     partnersContainer.insertAdjacentHTML('beforeend', singleBrand)
 })
+
+/* Ciclo per iterare le cards dei servizi offerti */
+serviceOffers.forEach(element => {
+    let singleService =
+        `
+        <div class="${element.col_classes}">
+            <div class="${element.services_wrap}">
+                <div class="${element.col_img_class}">
+                    <img src="${element.img_service}" alt="${element.img_alt}">
+                </div>
+                <div class="${element.card_style}">
+                    <h5 class="${element.h5_classes}">${element.h5_text}</h5>  
+                    <p class="${element.p_classes}">${element.p_text}</p>
+                </div>
+            </div>
+        </div>  
+        `
+    serviceContainer.insertAdjacentHTML('beforeend', singleService)
+})
+
 
 //#endregion
 
