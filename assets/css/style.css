@@ -60,9 +60,27 @@
     padding: 7rem 0;
     width: 90rem;
 }
+/*#endregion */
 
+/*#region About Area */
+.site-main .about-area {
+    padding: 8rem 5rem;
+}
 
+.about-title h2 > span {
+    display: block;
+    font: normal bolder 49px/60px var(--roboto);
+    letter-spacing: 18px;
+}
+
+.paragraph > p {
+    padding: 0.4rem 0;
+}
+
+p.para {
+    color: var(--text-color);
+    font: normal 500 16px/25px var(--roboto);
+}
 
 
 /*#endregion */
-
