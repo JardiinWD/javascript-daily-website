@@ -12,22 +12,8 @@ console.log(partnersContainer);
 const serviceContainer = document.getElementById("service")
 console.log(serviceContainer);
 
-/* Filtro Isotope.js per le diverse categorie */
-/* Fatta in JQuery */
-$(document).ready(function () {
-    /* Prendo i miei buttons */
-    let $btns = $('.project-area .button-group button')
-    /* Aggiungo evento al click */
-    $btns.click(function (e) {
-        $('.project-area .button-group button').removeClass("active")
-        e.target.classList.add('active') // Aggiungo al mio target la classe attiva
-        let selector = $(e.target).attr('data-filter') // in base al data-filter creo un selettore
-        /* Avvio, tramite jquery il filtro in base al selettore, nella function isotope */
-        $('.project-area .grid').isotope({
-            filter: selector
-        })
-    })
-})
+/* Seleziono il mio container di Buttons che filtrano */
+const filterButtons = document.getElementById("filters-buttons")
 
 //#endregion
 
@@ -194,6 +180,66 @@ const serviceOffers = [
 ]
 /* console.log(serviceOffers); */
 
+const filteredButtons = [
+    /* All Button */
+    {
+        type: 'button',
+        classes: 'active',
+        text: 'All',
+        data_filter: ""
+    },
+    /* Popular Button */
+    {
+        type: 'button',
+        classes: '',
+        text: 'Popular',
+        data_filter: ".popular"
+    },
+    /* Latest Button */
+    {
+        type: 'button',
+        classes: '',
+        text: 'Latest',
+        data_filter: ".latest"
+    },
+    /* Following Button */
+    {
+        type: 'button',
+        classes: '',
+        text: 'Following',
+        data_filter: ".following"
+    },
+    /* Upcoming Button */
+    {
+        type: 'button',
+        classes: '',
+        text: 'Upcoming',
+        data_filter: ".upcoming"
+    },
+]
+/* console.log(filteredButtons); */
+
+//#endregion
+
+//#region Functions
+
+/* Filtro Isotope.js per le diverse categorie */
+/* Fatta in JQuery */
+$(document).ready(function () {
+    /* Prendo i miei buttons */
+    let $btns = $('.project-area .button-group button')
+    /* Aggiungo evento al click */
+    $btns.click(function (e) {
+        $('.project-area .button-group button').removeClass("active")
+        e.target.classList.add('active') // Aggiungo al mio target la classe attiva
+        let selector = $(e.target).attr('data-filter') // in base al data-filter creo un selettore
+        /* Avvio, tramite jquery il filtro in base al selettore, nella function isotope */
+        $('.project-area .grid').isotope({
+            filter: selector
+        })
+    })
+})
+
 //#endregion
 
 //#region Cicli
@@ -240,6 +286,16 @@ serviceOffers.forEach(element => {
         `
     serviceContainer.insertAdjacentHTML('beforeend', singleService)
 })
+
+/* Ciclo per iterare i buttons delle cards progetti */
+filteredButtons.forEach(element => {
+    let singleFilterButton =
+        `
+        <button type="${element.type}" data-filter="${element.data_filter}" class="${element.classes}">${element.text}</button>
+        `
+    filterButtons.insertAdjacentHTML('beforeend', singleFilterButton)
+})
+
 
 //#endregion
 
