@@ -1,0 +1,44 @@
+[
+    {
+        "liClass":"nav-item",
+        "aClass": "nav-link active",
+        "href": "/",
+        "title": "Home"
+    },
+    {
+        "liClass": "nav-item",
+        "aClass": "nav-link",
+        "href": "/",
+        "title": "About"
+    },
+    {
+        "liClass": "nav-item",
+        "aClass": "nav-link",
+        "href": "/",
+        "title": "Services"
+    },
+    {
+        "liClass": "nav-item",
+        "aClass": "nav-link",
+        "href": "/",
+        "title": "Portfolio"
+    },
+    {
+        "liClass": "nav-item",
+        "aClass": "nav-link",
+        "href": "/",
+        "title": "Pages"
+    },
+    {
+        "liClass": "nav-item",
+        "aClass": "nav-link",
+        "href": "/",
+        "title": "Blog"
+    },
+    {
+        "liClass": "nav-item",
+        "aClass": "nav-link",
+        "href": "/",
+        "title": "Contacts"
+    }
+]

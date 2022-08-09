@@ -1,8 +1,13 @@
 //#region Variabili e Costanti
 
 /* Seleziono la mia lista non ordinata con tutti i list item */
+
 const navbarLinks = document.getElementById("navbarLinks")
 console.log(navbarLinks);
+/* Appendo la mia chiamata AJAX al file JSON */
+navbarLinks.insertAdjacentHTML(fetchNavLinks())
+
+
 
 /* Seleziono la mia row principale con all'interno i brands */
 const partnersContainer = document.getElementById("siteBrands")
@@ -24,56 +29,6 @@ console.log(projectCards);
 //#endregion
 
 //#region Arrays/Objects
-
-/* Valuta di utilizzare JSON/AJAX */
-
-
-/* Links Navbar */
-const nLinks = [
-    {
-        liClass: 'nav-item',
-        aClass: 'nav-link active',
-        href: '/',
-        title: 'Home'
-    },
-    {
-        liClass: 'nav-item',
-        aClass: 'nav-link',
-        href: '/',
-        title: 'About'
-    },
-    {
-        liClass: 'nav-item',
-        aClass: 'nav-link',
-        href: '/',
-        title: 'Services'
-    },
-    {
-        liClass: 'nav-item',
-        aClass: 'nav-link',
-        href: '/',
-        title: 'Portfolio'
-    },
-    {
-        liClass: 'nav-item',
-        aClass: 'nav-link',
-        href: '/',
-        title: 'Pages'
-    },
-    {
-        liClass: 'nav-item',
-        aClass: 'nav-link',
-        href: '/',
-        title: 'Blog'
-    },
-    {
-        liClass: 'nav-item',
-        aClass: 'nav-link',
-        href: '/',
-        title: 'Contacts'
-    },
-]
-/* console.log(nLinks); */
 
 const partners = [
     {
@@ -370,6 +325,27 @@ $(document).ready(function () {
     })
 })
 
+async function fetchNavLinks() {
+    const response = await fetch('./assets/json/nLinks.json');
+    const data = await response.json();
+    const myJson = JSON.stringify(data)
+    console.log(data); // Verifico in console
+
+    data.forEach(element => {
+        let singleLink =
+            `
+            <li class="${element.liClass}">
+                <a class="${element.aClass}" href="${element.href}">${element.title}</a>
+            </li>
+            `
+        navbarLinks.insertAdjacentHTML('beforeend', singleLink)
+    })
+    return myJson
+}
+
+
+
+
 //#endregion
 
 //#region Cicli
@@ -377,7 +353,8 @@ $(document).ready(function () {
 /* Valuta di fare tutto tramite Chiamate AJAX/JSON */
 
 /* Ciclo per iterare link alla navbar */
-nLinks.forEach(element => {
+/* nLinks.forEach(element => {
+    requestData(LinksURL)
     let singleLink =
         `
     <li class="${element.liClass}">
@@ -385,7 +362,10 @@ nLinks.forEach(element => {
     </li>
     `
     navbarLinks.insertAdjacentHTML('beforeend', singleLink)
-})
+}) */
+
+
+
 
 /* Ciclo per iterare cards dei partner */
 partners.forEach(element => {
