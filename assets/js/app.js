@@ -12,6 +12,23 @@ console.log(partnersContainer);
 const serviceContainer = document.getElementById("service")
 console.log(serviceContainer);
 
+/* Filtro Isotope.js per le diverse categorie */
+/* Fatta in JQuery */
+$(document).ready(function () {
+    /* Prendo i miei buttons */
+    let $btns = $('.project-area .button-group button')
+    /* Aggiungo evento al click */
+    $btns.click(function (e) {
+        $('.project-area .button-group button').removeClass("active")
+        e.target.classList.add('active') // Aggiungo al mio target la classe attiva
+        let selector = $(e.target).attr('data-filter') // in base al data-filter creo un selettore
+        /* Avvio, tramite jquery il filtro in base al selettore, nella function isotope */
+        $('.project-area .grid').isotope({
+            filter: selector
+        })
+    })
+})
+
 //#endregion
 
 //#region Arrays/Objects
