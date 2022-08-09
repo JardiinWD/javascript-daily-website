@@ -224,6 +224,5 @@ serviceOffers.forEach(element => {
     serviceContainer.insertAdjacentHTML('beforeend', singleService)
 })
 
-
 //#endregion
 

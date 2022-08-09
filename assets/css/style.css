@@ -171,5 +171,33 @@ p.para {
 .call-now > a {
     text-decoration: none;
 }
+/*#endregion */
+
+/*#region Services Area */
+
+.services-area {
+    padding: 7rem 2rem;
+}
+
+.services-area .services-title {
+    padding: 0 14rem;
+}
+
+.services-area .services-title h1 {
+    font-size: 35px;
+}
+
+/* Area delle cards */
+.services-area .services {
+    background: rgba(248,252,253, 0.95);
+    padding: 2rem 0;
+    width: 16rem;
+    margin: 5rem 0.5rem;
+    transition: box-shadow 0.7s ease;
+}
+
+.services-area .services:hover {
+    box-shadow: var(--box-shadow);
+}
 
 /*#endregion */
