@@ -6,6 +6,10 @@
     text-transform: uppercase;
 }
 
+.font-roboto {
+    font-family: var(--roboto);
+}
+
 /*#region Buttons */
 .button {
     padding: 0.8rem 2.2rem !important;
