@@ -14,10 +14,19 @@ console.log(serviceContainer);
 
 /* Seleziono il mio container di Buttons che filtrano */
 const filterButtons = document.getElementById("filters-buttons")
+console.log(filterButtons);
+
+/* Seleziono la mia row principale per le cards dei progetti */
+const projectCards = document.getElementById("project-cards")
+console.log(projectCards);
+
 
 //#endregion
 
 //#region Arrays/Objects
+
+/* Valuta di utilizzare JSON/AJAX */
+
 
 /* Links Navbar */
 const nLinks = [
@@ -219,6 +228,127 @@ const filteredButtons = [
 ]
 /* console.log(filteredButtons); */
 
+const projectItems = [
+    /* Minimul Design */
+    {
+        col_classes: 'col-lg-4 col-md-6 col-sm-12 element-item latest', // <div class="col-lg-4 col-md-6 col-sm-12 element-item latest">
+        wrapper: 'our-project', // <div class="our-project">
+        img_wrap: 'img', // <div class="img">
+        src: './assets/img/portfolio/p1.jpg', // <img src="./assets/img/portfolio/p1.jpg" alt="Portfolio 1">
+        alt: 'Portfolio 1', // <img src="./assets/img/portfolio/p1.jpg" alt="Portfolio 1">
+        info_wrap: 'title py-4', // <div class="title py-4">
+        h4_class: 'text-uppercase', // <div class="title py-4">
+        h4_text: 'Minimul Design',
+        span_class: 'text-secondary', // <span class="text-secondary">Latest, Portfolio</span>
+        span_text: 'Latest, Portfolio'
+    },
+    /* Paint Wall */
+    {
+        col_classes: 'col-lg-4 col-md-6 col-sm-12 element-item popular',
+        wrapper: 'our-project',
+        img_wrap: 'img',
+        src: './assets/img/portfolio/p2.jpg',
+        alt: 'Portfolio 2',
+        info_wrap: 'title py-4',
+        h4_class: 'text-uppercase',
+        h4_text: 'Paint Wall',
+        span_class: 'text-secondary',
+        span_text: 'Popular, Portfolio'
+    },
+    /* Female Light */
+    {
+        col_classes: 'col-lg-4 col-md-6 col-sm-12 element-item popular',
+        wrapper: 'our-project',
+        img_wrap: 'img',
+        src: './assets/img/portfolio/p3.jpg',
+        alt: 'Portfolio 3',
+        info_wrap: 'title py-4',
+        h4_class: 'text-uppercase',
+        h4_text: 'Female Light',
+        span_class: 'text-secondary',
+        span_text: 'Popular, Portfolio'
+    },
+    /* Fourth Air */
+    {
+        col_classes: 'col-lg-4 col-md-6 col-sm-12 element-item upcoming',
+        wrapper: 'our-project',
+        img_wrap: 'img',
+        src: './assets/img/portfolio/p4.jpg',
+        alt: 'Portfolio 4',
+        info_wrap: 'title py-4',
+        h4_class: 'text-uppercase',
+        h4_text: 'Fourth Air',
+        span_class: 'text-secondary',
+        span_text: 'Upcoming, Portfolio'
+    },
+    /* Multiple Fown */
+    {
+        col_classes: 'col-lg-4 col-md-6 col-sm-12 element-item upcoming',
+        wrapper: 'our-project',
+        img_wrap: 'img',
+        src: './assets/img/portfolio/p5.jpg',
+        alt: 'Portfolio 5',
+        info_wrap: 'title py-4',
+        h4_class: 'text-uppercase',
+        h4_text: 'Multiple Fown',
+        span_class: 'text-secondary',
+        span_text: 'Upcoming, Portfolio'
+    },
+    /* Together Sign */
+    {
+        col_classes: 'col-lg-4 col-md-6 col-sm-12 element-item following',
+        wrapper: 'our-project',
+        img_wrap: 'img',
+        src: './assets/img/portfolio/p6.jpg',
+        alt: 'Portfolio 6',
+        info_wrap: 'title py-4',
+        h4_class: 'text-uppercase',
+        h4_text: 'Together Sign',
+        span_class: 'text-secondary',
+        span_text: 'Following, Portfolio'
+    },
+    /* Green Heaven */
+    {
+        col_classes: 'col-lg-4 col-md-6 col-sm-12 element-item following',
+        wrapper: 'our-project',
+        img_wrap: 'img',
+        src: './assets/img/portfolio/p7.jpg',
+        alt: 'Portfolio 7',
+        info_wrap: 'title py-4',
+        h4_class: 'text-uppercase',
+        h4_text: 'Green Heaven',
+        span_class: 'text-secondary',
+        span_text: 'Following, Portfolio'
+    },
+    /* Fly Male */
+    {
+        col_classes: 'col-lg-4 col-md-6 col-sm-12 element-item following',
+        wrapper: 'our-project',
+        img_wrap: 'img',
+        src: './assets/img/portfolio/p8.jpg',
+        alt: 'Portfolio 8',
+        info_wrap: 'title py-4',
+        h4_class: 'text-uppercase',
+        h4_text: 'Fly Male',
+        span_class: 'text-secondary',
+        span_text: 'Following, Portfolio'
+    },
+    /* Camera Lens */
+    {
+        col_classes: 'col-lg-4 col-md-6 col-sm-12 element-item upcoming',
+        wrapper: 'our-project',
+        img_wrap: 'img',
+        src: './assets/img/portfolio/p9.jpg',
+        alt: 'Portfolio 9',
+        info_wrap: 'title py-4',
+        h4_class: 'text-uppercase',
+        h4_text: 'Camera Lens',
+        span_class: 'text-secondary',
+        span_text: 'Upcoming, Portfolio'
+    },
+]
+
+
 //#endregion
 
 //#region Functions
@@ -243,6 +373,8 @@ $(document).ready(function () {
 //#endregion
 
 //#region Cicli
+
+/* Valuta di fare tutto tramite Chiamate AJAX/JSON */
 
 /* Ciclo per iterare link alla navbar */
 nLinks.forEach(element => {
@@ -296,6 +428,23 @@ filteredButtons.forEach(element => {
     filterButtons.insertAdjacentHTML('beforeend', singleFilterButton)
 })
 
+projectItems.forEach(element => {
+    let singleProject =
+        `
+        <div class="${element.col_classes}">
+            <div class="${element.wrapper}">
+                <div class="${element.img_wrap}">
+                    <img src="${element.src}" alt="${element.alt}">
+                </div>
+                <div class="${element.info_wrap}">
+                    <h4 class="${element.h4_class}">${element.h4_text}</h4>
+                    <span class="${element.span_class}">${element.span_text}</span>
+                </div>
+            </div>
+        </div> 
+        `
+    projectCards.insertAdjacentHTML('beforeend', singleProject)
+})
 
 //#endregion
 
