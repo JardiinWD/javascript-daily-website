@@ -15,40 +15,35 @@ const filteredButtons = [
         type: 'button',
         classes: 'active',
         text: 'All',
-        data_filter: "",
-        id: 'btn1'
+        data_filter: ""
     },
     /* Popular Button */
     {
         type: 'button',
         classes: '',
         text: 'Popular',
-        data_filter: ".popular",
-        id: 'btn2'
+        data_filter: ".popular"
     },
     /* Latest Button */
     {
         type: 'button',
         classes: '',
         text: 'Latest',
-        data_filter: ".latest",
-        id: 'btn3'
+        data_filter: ".latest"
     },
     /* Following Button */
     {
         type: 'button',
         classes: '',
         text: 'Following',
-        data_filter: ".following",
-        id: 'btn4'
+        data_filter: ".following"
     },
     /* Upcoming Button */
     {
         type: 'button',
         classes: '',
         text: 'Upcoming',
-        data_filter: ".upcoming",
-        id: 'btn5'
+        data_filter: ".upcoming"
     },
 ]
 /* console.log(filteredButtons); */
@@ -71,12 +66,7 @@ $(document).ready(function () {
         $('.project-area .grid').isotope({
             filter: selector
         })
-        return false
     })
-
-    $('.project-area .button-group #btn1').trigger('click')
-
-
 })
 
 /**
@@ -233,10 +223,9 @@ projectItems()
 filteredButtons.forEach(element => {
     let singleFilterButton =
         `
-        <button id="${element.id}" type="${element.type}" data-filter="${element.data_filter}" class="${element.classes}">${element.text}</button>
+        <button type="${element.type}" data-filter="${element.data_filter}" class="${element.classes}">${element.text}</button>
         `
     filterButtons.insertAdjacentHTML('beforeend', singleFilterButton)
 })
 
 //#endregion
-
