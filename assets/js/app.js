@@ -73,9 +73,17 @@ $(document).ready(function () {
  * Funzione per ciclare singoli links navbar tramite chiamata AJAX
  */
 async function fetchNavLinks() {
+    /* Salvo il mio JSON nel response */
     const response = await fetch('./assets/json/nLinks.json');
-    const data = await response.json();
-    console.log(data); // Verifico in console
+    /* Avvio la chiamata API tramite metodo try/catch */
+    try {
+        data = await response.json();
+        console.log(data); // Verifico in console
+    }
+    catch (error) {
+        console.error(error)
+    }
+
     /* Qui devo dichiarare il mio ID da prendere */
     const navbarLinks = document.getElementById("navbarLinks")
 
@@ -96,9 +104,16 @@ fetchNavLinks()
  * Funzione per generare cards partners dinamiche tramite chiamata AJAX
  */
 async function partners() {
+    /* Salvo il mio JSON nel response */
     const response = await fetch('./assets/json/partners.json');
-    const data = await response.json();
-    console.log(data); // Verifico in console
+    /* Avvio la chiamata API tramite metodo try/catch */
+    try {
+        data = await response.json();
+        console.log(data); // Verifico in console
+    }
+    catch (error) {
+        console.error(error)
+    }
 
     /* Seleziono la mia row principale con all'interno i brands */
     const partnersContainer = document.getElementById("siteBrands")
@@ -124,10 +139,18 @@ partners()
 /**
  * Functions per iterare le cards dei servizi offerti tramite chiamata AJAX
  */
+
 async function serviceOffers() {
+    /* Salvo il mio JSON nel response */
     const response = await fetch('./assets/json/serviceOffers.json');
-    const data = await response.json();
-    console.log(data); // Verifico in console
+    /* Avvio la chiamata API tramite metodo try/catch */
+    try {
+        data = await response.json();
+        console.log(data); // Verifico in console
+    }
+    catch (error) {
+        console.error(error)
+    }
 
     /* Seleziono la mia row principale per i servizi offerti */
     const serviceContainer = document.getElementById("service")
@@ -152,15 +175,20 @@ async function serviceOffers() {
         serviceContainer.insertAdjacentHTML('beforeend', singleService)
     })
 }
-
 /* Ora invoco la mia function per generare cards servizi offerti*/
 serviceOffers()
 
-
 async function projectItems() {
+    /* Salvo il mio JSON nel response */
     const response = await fetch('./assets/json/projectItems.json');
-    const data = await response.json();
-    console.log(data); // Verifico in console
+    /* Avvio la chiamata API tramite metodo try/catch */
+    try {
+        data = await response.json();
+        console.log(data); // Verifico in console
+    }
+    catch (error) {
+        console.error(error)
+    }
 
     /* Seleziono la mia row principale per le cards dei progetti */
     const projectCards = document.getElementById("project-cards")
@@ -184,7 +212,6 @@ async function projectItems() {
         projectCards.insertAdjacentHTML('beforeend', singleProject)
     })
 }
-
 /* Ora invoco la mia function per generare cards dei progetti */
 projectItems()
 
