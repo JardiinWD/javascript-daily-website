@@ -225,4 +225,56 @@ p.para {
     height: 370px;
 }
 
+.our-project .img:hover > img {
+    filter: brightness(1.1)drop-shadow(1px 8px 30px #b1afaf);
+    cursor: pointer;
+}
+
+.title-h1 {
+    font: normal bold 39px/40px var(--roboto);
+}
+
+/*#endregion */
+
+/*#region Testimonials Area */
+.site-main .about-area .about-title p {
+    padding: 1rem 7rem;
+}
+
+.site-main .about-area .client {
+    background: #ffffff10;
+    box-shadow: var(--box-shadow);
+    margin: 3rem 0rem;
+}
+
+.about-area .client .client-img {
+    padding: 2rem;
+}
+
+.about-area .client .about-client {
+    padding-top: 2rem;
+}
+
+.about-area .client .about-client h4 {
+    font: normal 500 21px/20px var(--roboto);
+}
+
+.about-area .client .about-client p {
+    font-size: 14px;
+}
+
+.owl-carousel .owl-item {
+    display: flex;
+    justify-content: center;
+    padding: 0 1.5rem;
+}
+
+/* Questi sono i puntini sotto del carosello */
+.owl-carousel .owl-dots .owl-dot.active span {
+    background: var(--primary-color);
+    width: 12px;
+    height: 12px;
+}
+
+
 /*#endregion */
