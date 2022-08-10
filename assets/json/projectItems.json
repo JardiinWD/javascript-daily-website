@@ -1,0 +1,110 @@
+[
+    {
+        "col_classes": "col-lg-4 col-md-6 col-sm-12 element-item latest", 
+        "wrapper": "our-project", 
+        "img_wrap": "img", 
+        "src": "./assets/img/portfolio/p1.jpg", 
+        "alt": "Portfolio 1", 
+        "info_wrap": "title py-4",
+        "h4_class": "text-uppercase", 
+        "h4_text": "Minimul Design",
+        "span_class": "text-secondary", 
+        "span_text": "Latest, Portfolio"
+    },
+    {
+        "col_classes": "col-lg-4 col-md-6 col-sm-12 element-item popular",
+        "wrapper": "our-project",
+        "img_wrap": "img",
+        "src": "./assets/img/portfolio/p2.jpg",
+        "alt": "Portfolio 2",
+        "info_wrap": "title py-4",
+        "h4_class": "text-uppercase",
+        "h4_text": "Paint Wall",
+        "span_class": "text-secondary",
+        "span_text": "Popular, Portfolio"
+    },
+    {
+        "col_classes": "col-lg-4 col-md-6 col-sm-12 element-item popular",
+        "wrapper": "our-project",
+        "img_wrap": "img",
+        "src": "./assets/img/portfolio/p3.jpg",
+        "alt": "Portfolio 3",
+        "info_wrap": "title py-4",
+        "h4_class": "text-uppercase",
+        "h4_text": "Female Light",
+        "span_class": "text-secondary",
+        "span_text": "Popular, Portfolio"
+    },
+    {
+        "col_classes": "col-lg-4 col-md-6 col-sm-12 element-item upcoming",
+        "wrapper": "our-project",
+        "img_wrap": "img",
+        "src": "./assets/img/portfolio/p4.jpg",
+        "alt": "Portfolio 4",
+        "info_wrap": "title py-4",
+        "h4_class": "text-uppercase",
+        "h4_text": "Fourth Air",
+        "span_class": "text-secondary",
+        "span_text": "Upcoming, Portfolio"
+    },
+    {
+        "col_classes": "col-lg-4 col-md-6 col-sm-12 element-item upcoming",
+        "wrapper": "our-project",
+        "img_wrap": "img",
+        "src": "./assets/img/portfolio/p5.jpg",
+        "alt": "Portfolio 5",
+        "info_wrap": "title py-4",
+        "h4_class": "text-uppercase",
+        "h4_text": "Multiple Fown",
+        "span_class": "text-secondary",
+        "span_text": "Upcoming, Portfolio"
+    },
+    {
+        "col_classes": "col-lg-4 col-md-6 col-sm-12 element-item following",
+        "wrapper": "our-project",
+        "img_wrap": "img",
+        "src": "./assets/img/portfolio/p6.jpg",
+        "alt": "Portfolio 6",
+        "info_wrap": "title py-4",
+        "h4_class": "text-uppercase",
+        "h4_text": "Together Sign",
+        "span_class": "text-secondary",
+        "span_text": "Following, Portfolio"
+    },
+    {
+        "col_classes": "col-lg-4 col-md-6 col-sm-12 element-item following",
+        "wrapper": "our-project",
+        "img_wrap": "img",
+        "src": "./assets/img/portfolio/p7.jpg",
+        "alt": "Portfolio 7",
+        "info_wrap": "title py-4",
+        "h4_class": "text-uppercase",
+        "h4_text": "Green Heaven",
+        "span_class": "text-secondary",
+        "span_text": "Following, Portfolio"
+    },
+    {
+        "col_classes": "col-lg-4 col-md-6 col-sm-12 element-item following",
+        "wrapper": "our-project",
+        "img_wrap": "img",
+        "src": "./assets/img/portfolio/p8.jpg",
+        "alt": "Portfolio 8",
+        "info_wrap": "title py-4",
+        "h4_class": "text-uppercase",
+        "h4_text": "Fly Male",
+        "span_class": "text-secondary",
+        "span_text": "Following, Portfolio"
+    },
+    {
+        "col_classes": "col-lg-4 col-md-6 col-sm-12 element-item upcoming",
+        "wrapper": "our-project",
+        "img_wrap": "img",
+        "src": "./assets/img/portfolio/p9.jpg",
+        "alt": "Portfolio 9",
+        "info_wrap": "title py-4",
+        "h4_class": "text-uppercase",
+        "h4_text": "Camera Lens",
+        "span_class": "text-secondary",
+        "span_text": "Upcoming, Portfolio"
+    }
+]
