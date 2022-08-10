@@ -70,8 +70,8 @@ $(document).ready(function () {
 
     /* OWL Carousel */
     $('.site-main .about-area .owl-carousel').owlCarousel({
-        loop: true,
-        autoplay: true,
+        loop: true, // Ciclo loop infinito
+        autoplay: true, // Autoplay per il carosello
         dots: true, // puntini sotto
         responsive: {
             0: {
@@ -193,6 +193,9 @@ async function serviceOffers() {
 /* Ora invoco la mia function per generare cards servizi offerti*/
 serviceOffers()
 
+/**
+ * Function per generare Cards dei progetti
+ */
 async function projectItems() {
     /* Salvo il mio JSON nel response */
     const response = await fetch('./assets/json/projectItems.json');
@@ -230,6 +233,34 @@ async function projectItems() {
 /* Ora invoco la mia function per generare cards dei progetti */
 projectItems()
 
+async function footerIcons() {
+    /* Salvo il mio JSON nel response */
+    const response = await fetch('./assets/json/footerLinks.json');
+    /* Avvio la chiamata API tramite metodo try/catch */
+    try {
+        data = await response.json();
+        console.log(data); // Verifico in console
+    }
+    catch (error) {
+        console.error(error)
+    }
+
+    /* Seleziono la mia row principale per le cards dei progetti */
+    const socialId = document.getElementById("socialID")
+    console.log(socialId);
+
+    data.forEach(element => {
+        let singleIcon =
+            `
+            <a href="${element.href}"><i class="${element.icon}"></i></a>
+            `
+        socialId.insertAdjacentHTML('beforeend', singleIcon)
+    })
+
+}
+/* Invoco la mia function per le icone nel footer */
+footerIcons()
+
 //#endregion
 
 //#region Cicli
@@ -242,5 +273,7 @@ filteredButtons.forEach(element => {
         `
     filterButtons.insertAdjacentHTML('beforeend', singleFilterButton)
 })
+
+
 
 //#endregion
